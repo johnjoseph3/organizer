@@ -13,6 +13,5 @@ export class NewGoalComponent {
     onSubmit({ value, valid }: { value: any, valid: boolean }) {
         if (!valid) return
         this.goalsService.createGoal(value.goal);
-        this.goal = '';
     }
 }

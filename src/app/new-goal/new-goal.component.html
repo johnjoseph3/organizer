@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<form #form="ngForm" (ngSubmit)="onSubmit(form); form.reset()">
     <input name="goal" required minlength="3" [(ngModel)]="goal" #name="ngModel">
     <button type="submit">Add Goal</button>
     <div *ngIf="name.invalid && (name.dirty || name.touched)">
