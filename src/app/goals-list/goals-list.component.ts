@@ -15,4 +15,8 @@ export class GoalsListComponent implements OnInit {
         this.goalsService.allGoals.subscribe(goals => this.goals = goals)
     }
 
+    deleteGoal(id: string) {
+        this.goalsService.deleteGoal(id)
+    }
+
 }

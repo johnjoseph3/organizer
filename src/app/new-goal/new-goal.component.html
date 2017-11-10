@@ -1,2 +1,8 @@
-<input type="text" (keyup)="updateGoal($event)">
-<button (click)="createGoal()">Add Goal</button>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input name="goal" required minlength="3" [(ngModel)]="goal" #name="ngModel">
+    <button type="submit">Add Goal</button>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.required">Name is required.</div>
+        <div *ngIf="name.errors.minlength">Name must be at least 3 characters long.</div>
+    </div>
+</form>

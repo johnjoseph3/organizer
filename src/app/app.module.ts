@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 import { GoalsService } from './goals.service';
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { NewGoalComponent } from './new-goal/new-goal.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [GoalsService],
   bootstrap: [AppComponent]

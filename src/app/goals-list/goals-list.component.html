@@ -1,3 +1,5 @@
 <ul>
-    <li *ngFor="let goal of goals">{{goal.goal}}</li>
+    <li *ngFor="let goal of goals">{{goal.goal}}
+        <span (click)="deleteGoal(goal._id)">X</span>
+    </li>
 </ul>

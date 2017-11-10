@@ -10,13 +10,9 @@ export class NewGoalComponent {
     constructor(private goalsService: GoalsService) {}
     goal: any;
 
-    updateGoal(event: any) {
-      this.goal = event.target.value;
-    }
-
-    createGoal() {
-        this.goalsService.createGoal(this.goal).subscribe(data => {
-            this.goalsService.getGoals();
-        })
+    onSubmit({ value, valid }: { value: any, valid: boolean }) {
+        if (!valid) return
+        this.goalsService.createGoal(value.goal);
+        this.goal = '';
     }
 }
